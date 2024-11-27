@@ -1,0 +1,744 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+$color-silver: #7f7f7f;
+///////////////// Comman ///////////////////
+h1 {
+  font-family: "Cormorant Garamond", serif;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: rgb(249, 244, 244);
+}
+@mixin btn() {
+  margin-top: 10px;
+  height: 50px;
+  width: 203px;
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+@mixin btn-two() {
+  margin-top: 10px;
+  height: 50px;
+  width: 148px;
+  border: 1px solid rgb(49, 48, 48);
+  background-color: transparent;
+  color: rgb(37, 37, 37);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+@mixin color($color) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  background-color: $color;
+  border-radius: 9999px;
+  z-index: 2;
+  position: relative;
+}
+@mixin color__after() {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border: 1px solid silver;
+  border-radius: 9999px;
+}
+@mixin bg__after($url, $op) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url($url);
+  z-index: 1;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: $op;
+}
+/////////////// hearder //////////////////
+.hearder {
+  padding: 20px 0;
+  background-color: $color-silver;
+  position: relative;
+  z-index: 99;
+  &::after {
+    @include bg__after(
+      "https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-01.jpg",
+      1
+    );
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 2;
+    background: #000;
+  }
+
+  & .header__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & .nav {
+    &__item {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      z-index: 3;
+      & a {
+        padding: 10px;
+      }
+      &--icon {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        z-index: 3;
+      }
+      &--after::after {
+        position: absolute;
+        content: "0";
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        top: 5px;
+        right: -6px;
+        background-color: #fff;
+        font-weight: bold;
+        box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.3);
+        font-size: 11px;
+        padding-left: 0px;
+        padding-right: 2px;
+        line-height: 17px;
+        letter-spacing: -0.5px;
+        height: 18px;
+        min-width: 18px;
+        border-radius: 99px;
+        text-align: center;
+        z-index: 3;
+        cursor: pointer;
+      }
+      &--logo {
+        margin-left: -165px;
+        cursor: pointer;
+      }
+    }
+  }
+  & .body {
+    padding: 150px 0;
+    text-align: center;
+    color: white;
+    width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    &__title--small {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+    }
+    &__title--big {
+      font-size: 68px;
+      padding: 15px;
+    }
+    &__desc {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    &__btn {
+      @include btn();
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+////////////////////////// Most Popular /////////////
+.mostPopular {
+  padding: 100px 0;
+  text-align: center;
+  & .body__header {
+    margin-bottom: 25px;
+    font-size: 56px;
+    font-weight: 700;
+    font-family: "Cormorant Garamond", serif;
+    text-transform: capitalize;
+  }
+  & .body__position {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+    display: block;
+    line-height: 1.3;
+    opacity: 0.6;
+  }
+  & .body__desc {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  & .body__price {
+    line-height: 1.3;
+    margin-bottom: 0;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.46);
+  }
+  & .body__size {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    &--color {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 10px;
+      background-color: transparent;
+      border-radius: 3px;
+      border: 1px solid rgb(227, 227, 227);
+      transition: 0.5s;
+      &:hover {
+        border: 1px solid rgb(88, 88, 88);
+      }
+    }
+  }
+  & .body__color {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    &--cl {
+      margin-top: 10px;
+    }
+    &--black {
+      @include color(rgb(23, 23, 23));
+
+      &:hover::after {
+        @include color__after();
+      }
+    }
+    &--green {
+      @include color(rgb(0, 149, 50));
+
+      &:hover::after {
+        @include color__after();
+      }
+    }
+    &--red {
+      @include color(red);
+
+      &:hover::after {
+        @include color__after();
+      }
+    }
+    &--white {
+      @include color(#e6dddd);
+
+      &:hover::after {
+        @include color__after();
+      }
+    }
+  }
+
+  & .body__item {
+    margin-bottom: 50px;
+    &--image {
+      border-radius: 5px;
+      overflow: hidden;
+      & img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+/////////////// section 2////////////
+.bagCollection {
+  background: linear-gradient(90deg, #c7c7c7 0%, #5f5f5f 80%);
+  position: relative;
+  &::after {
+    @include bg__after(
+      "https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-02.jpg",
+      0.5
+    );
+  }
+  & .body {
+    &__item {
+      margin: 120px 0;
+      text-align: center;
+      position: relative;
+      z-index: 3;
+    }
+    &__item--image {
+      margin: 0 auto;
+      width: 456px;
+      height: 574px;
+
+      & img {
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__title {
+      margin-top: 20px;
+      font-size: 38px;
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.15em;
+      text-transform: capitalize;
+      color: white;
+    }
+    &__btn {
+      @include btn();
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+//////////// section three work & affice attire //////////
+
+.workOfficeAttire {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+
+    left: 0;
+    background-image: url(https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-05-1.jpg);
+    z-index: -2;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: -1;
+    width: 50%;
+    height: 100%;
+  }
+  & .body {
+    &__right {
+      &--image {
+        width: 800px;
+        height: 500px;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          background-position: center right;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+    &__left {
+      margin: 200px 0;
+
+      & .body {
+        &__title {
+          &--small {
+            font-size: 11px;
+            line-height: 1.25em;
+            font-weight: 600;
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          }
+          &--big {
+            font-size: 48px;
+            font-weight: 700;
+            font-family: "Cormorant Garamond", serif;
+            line-height: 1.15em;
+            text-transform: capitalize;
+          }
+        }
+        &__desc {
+          width: 430px;
+          font-weight: 600;
+          color: rgb(147, 147, 147);
+        }
+        &__btn {
+          &--two {
+            @include btn-two();
+            &:hover {
+              background-color: rgb(46, 44, 44);
+              color: rgb(227, 226, 226);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/////////////// section-four discover the allure///////////////
+
+.discovertheallure {
+  position: relative;
+
+  margin-bottom: 100px;
+  &::after {
+    @include bg__after(
+      "https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-03.jpg",
+      1
+    );
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 2;
+
+    background-image: linear-gradient(90deg, #000 50%, #00000000 100%);
+  }
+  & .body {
+    &__left {
+      position: relative;
+      top: -100px;
+      left: 0;
+      z-index: 3;
+      &--image {
+        width: 456px;
+        height: 555px;
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    &__title {
+      margin-top: 20px;
+      margin-bottom: 15px;
+      font-size: 42px;
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.15em;
+      text-transform: capitalize;
+      color: white;
+    }
+    &__desc {
+      margin-bottom: 30px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+    &__btn {
+      &--two {
+        @include btn-two();
+        border: 1px solid #fff;
+        color: #fff;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
+//////////////// Newest Products///////////////
+.newestProducts {
+  padding: 30px 0;
+  text-align: center;
+  & .body__header {
+    margin-bottom: 25px;
+    font-size: 56px;
+    font-weight: 700;
+    font-family: "Cormorant Garamond", serif;
+    text-transform: capitalize;
+  }
+  & .body__position {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 0.85em;
+    margin-bottom: 0.5em;
+    display: block;
+    line-height: 1.3;
+    opacity: 0.6;
+  }
+  & .body__desc {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  & .body__price {
+    line-height: 1.3;
+    margin-bottom: 0;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.46);
+  }
+  & .body__item {
+    margin-bottom: 30px;
+    &--image {
+      border-radius: 5px;
+      overflow: hidden;
+      & img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+///////////////// feedback /////////////////
+.feedback {
+  position: relative;
+  padding: 100px 0;
+  &::after {
+    @include bg__after(
+      "https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-04.jpg",
+      1
+    );
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 2;
+    background: #000;
+  }
+  & .body {
+    &__item {
+      text-align: center;
+      position: relative;
+      z-index: 999;
+    }
+    &__star {
+      color: orange;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    &__title {
+      color: #fff;
+      font-size: 32px;
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: capitalize;
+      width: 760px;
+      margin: 0 auto;
+    }
+    &__desc {
+      margin-top: 35px;
+      color: #fff;
+      font-size: 11px;
+      font-size: 0.78571428571429rem;
+      line-height: 1.25em;
+      font-weight: 600;
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+}
+/////////////// payments///////////////////
+.payments {
+  padding: 70px 0;
+  text-align: center;
+  & .body {
+    &__item {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &--icon {
+        font-size: 25px;
+        margin-bottom: 20px;
+      }
+    }
+    &__title {
+      font-size: 31px;
+      line-height: 1.4em;
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+    &__desc {
+      font-size: 15px;
+      color: #9c9b9b;
+      font-weight: 600;
+      width: 252px;
+      &--size {
+        font-size: 15px;
+        color: #9c9b9b;
+        font-weight: 600;
+        width: 240px;
+      }
+    }
+  }
+}
+
+.explore {
+  position: relative;
+  &::after {
+    @include bg__after(
+      "https://websitedemos.net/clothing-store-02/wp-content/uploads/sites/1447/2024/03/bg-005.jpg",
+      1
+    );
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(192, 179, 179, 0) 0%, #000000 80%);
+  }
+  & .body {
+    &__right {
+      position: relative;
+      z-index: 99;
+      color: #fff;
+      margin: 150px 0;
+    }
+    &__title {
+      &--small {
+        font-size: 11px;
+        line-height: 1.25em;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      &--big {
+        font-size: 50px;
+        font-weight: 700;
+        font-family: "Cormorant Garamond", serif;
+        line-height: 1.15em;
+        text-transform: capitalize;
+        height: 128px;
+      }
+    }
+    &__desc {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    &__btn {
+      &--two {
+        @include btn-two();
+        border: 1px solid #fff;
+        color: #fff;
+        transition: 0.5s;
+
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
+///////////////// section introduce//////////
+.introduce {
+  padding-top: 50px;
+  & .body {
+    &__item {
+      margin-bottom: 50px;
+    }
+    &__header {
+      margin-bottom: 15px;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+      line-height: 1.15em;
+      text-transform: capitalize;
+    }
+    &__content {
+      &--desc {
+        & a {
+          color: #878787;
+          font-weight: 500;
+          transition: 0.5s;
+          font-size: 14px;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+//////////////// footer /////////////////////////
+
+.footer {
+  padding: 25px 0;
+  text-align: center;
+  // border-top: 1px solid #ddd;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    top: 0;
+    left: 0;
+  }
+  &__copyright {
+    color: #878787;
+    font-weight: 500;
+    transition: 0.5s;
+    font-size: 16px;
+  }
+}

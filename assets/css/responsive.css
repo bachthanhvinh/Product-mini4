@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@media (max-width: 1199.98px) {
+  /* Code… */
+  .explore .body__title--small {
+    font-weight: auto;
+  }
+  .explore .body__title--big {
+    font-weight: auto;
+    height: auto;
+  }
+}
+/* Kích thước nhỏ hơn 992px */
+@media (max-width: 991.98px) {
+  .hearder .header__menu {
+    display: none;
+  }
+  .hearder .body {
+    width: auto;
+  }
+  .hearder .body__title--big {
+    width: auto;
+  }
+  .hearder .body__desc {
+    width: auto;
+  }
+  .bagCollection .body__item--image {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+  }
+  .bagCollection .body__item--image img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .feedback .body__title {
+    width: auto;
+  }
+}
+/* Kích thước nhỏ hơn 768px */
+@media (max-width: 767.98px) {
+  .bagCollection .body__item--image {
+    margin: 0 auto;
+    width: auto;
+    height: 574px;
+  }
+  .bagCollection .body__item--image img {
+    margin-top: 118px;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+/* Kích thước nhỏ hơn 576px */
+@media (max-width: 575.98px) {
+  /* Code… */
+  .hearder .header__menu {
+    display: none;
+  }
+  .hearder .body {
+    width: auto;
+  }
+  .hearder .body__title--big {
+    width: auto;
+    font-size: 40px;
+  }
+  .hearder .body__desc {
+    font-size: 13px;
+    width: auto;
+  }
+  .explore .body__title--small {
+    font-weight: auto;
+  }
+  .explore .body__title--big {
+    font-weight: auto;
+    height: auto;
+  }
+  .discovertheallure .body__left--image {
+    width: auto;
+    height: 555px;
+  }
+  .discovertheallure .body__left--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .workOfficeAttire .body__left {
+    margin: 200px 0;
+  }
+  .workOfficeAttire .body__left .body__title--small {
+    width: auto;
+  }
+  .workOfficeAttire .body__left .body__title--big {
+    width: auto;
+  }
+  .workOfficeAttire .body__left .body__desc {
+    width: auto;
+  }
+  .bagCollection .body__item--image {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+  }
+  .bagCollection .body__item--image img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .bagCollection .body__title {
+    font-size: 30px;
+  }
+  .bagCollection .body__btn {
+    margin-top: 10px;
+    height: 50px;
+    width: 153px;
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+}
+
+/*# sourceMappingURL=responsive.css.map */

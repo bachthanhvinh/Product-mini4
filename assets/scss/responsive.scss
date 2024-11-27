@@ -1,0 +1,202 @@
+@media (min-width: 1120px) {
+}
+@media (max-width: 1199.98px) {
+  /* Code… */
+  .explore {
+    & .body {
+      &__title {
+        &--small {
+          font-weight: auto;
+        }
+        &--big {
+          font-weight: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+/* Kích thước nhỏ hơn 992px */
+@media (max-width: 991.98px) {
+  .hearder {
+    & .header {
+      &__menu {
+        display: none;
+      }
+    }
+    & .body {
+      width: auto;
+      &__title {
+        &--big {
+          width: auto;
+        }
+      }
+      &__desc {
+        width: auto;
+      }
+    }
+  }
+  .bagCollection {
+    & .body {
+      // &__item {
+      // }
+      &__item {
+        &--image {
+          margin: 0 auto;
+          width: auto;
+          height: auto;
+
+          & img {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+  .feedback {
+    & .body {
+      &__title {
+        width: auto;
+      }
+    }
+  }
+}
+
+/* Kích thước nhỏ hơn 768px */
+@media (max-width: 767.98px) {
+  .bagCollection {
+    & .body {
+      // &__item {
+      // }
+      &__item {
+        &--image {
+          margin: 0 auto;
+          width: auto;
+          height: 574px;
+
+          & img {
+            margin-top: 118px;
+
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Kích thước nhỏ hơn 576px */
+@media (max-width: 575.98px) {
+  /* Code… */
+  .hearder {
+    & .header {
+      &__menu {
+        display: none;
+      }
+    }
+    & .body {
+      width: auto;
+      &__title {
+        &--big {
+          width: auto;
+          font-size: 40px;
+        }
+      }
+      &__desc {
+        font-size: 13px;
+        width: auto;
+      }
+    }
+  }
+  .explore {
+    & .body {
+      &__title {
+        &--small {
+          font-weight: auto;
+        }
+        &--big {
+          font-weight: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+  .discovertheallure {
+    & .body {
+      &__left {
+        &--image {
+          width: auto;
+          height: 555px;
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+  .workOfficeAttire {
+    & .body {
+      &__left {
+        margin: 200px 0;
+
+        & .body {
+          &__title {
+            &--small {
+              width: auto;
+            }
+            &--big {
+              width: auto;
+            }
+          }
+          &__desc {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+  .bagCollection {
+    & .body {
+      // &__item {
+      // }
+      &__item {
+        &--image {
+          margin: 0 auto;
+          width: auto;
+          height: auto;
+
+          & img {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+      &__title {
+        font-size: 30px;
+      }
+      &__btn {
+        margin-top: 10px;
+        height: 50px;
+        width: 153px;
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+        font-weight: 500;
+        transition: 0.5s;
+      }
+    }
+  }
+}
